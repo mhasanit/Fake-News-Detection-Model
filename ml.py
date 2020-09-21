@@ -30,7 +30,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=345)
 
 nb = make_pipeline(
     CountVectorizer(binary=True),
-#   LinearSVC()
     MultinomialNB()
     
 )
@@ -41,4 +40,4 @@ y_pred = nb.predict(X_test)
 print(classification_report(y_test, y_pred))
 nb.fit(X, y)
 
-#dump(nb, "clf.joblib")
+dump(nb, "clf.joblib")
